@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Salve vídeos que são seus ou que você tem autorização para baixar, a partir de um arquivo local ou de uma URL direta de vídeo." />
+  <meta name="color-scheme" content="light" />
+  <title>VaultReel — Baixe vídeos seus ou autorizados</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Link de pulo para o conteúdo principal (acessibilidade por teclado) -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- 1. Cabeçalho -->
+  <header class="cabecalho">
+    <div class="container cabecalho__interno">
+      <div class="marca">
+        <span class="marca__icone" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v11" />
+            <path d="m7.5 10 4.5 4.5L16.5 10" />
+            <path d="M4.5 18.5h15" />
+          </svg>
+        </span>
+        <div>
+          <p class="marca__nome">VaultReel</p>
+          <p class="marca__slogan">Serviço fictício para salvar vídeos</p>
+        </div>
+      </div>
+      <p class="selo">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <rect x="4" y="10.5" width="16" height="10" rx="2" />
+          <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
+        </svg>
+        Roda só no seu navegador
+      </p>
+    </div>
+  </header>
+
+  <main class="container" id="conteudo">
+    <!-- Descrição curta do serviço -->
+    <section class="intro">
+      <h1>Prepare o download de um vídeo seu ou autorizado</h1>
+      <p>
+        Escolha um arquivo de vídeo do seu dispositivo ou informe uma <strong>URL direta</strong> para um arquivo de
+        vídeo acessível. A pré-visualização e o download acontecem aqui mesmo, sem envio de dados para servidores
+        de terceiros.
+      </p>
+    </section>
+
+    <!-- Mensagens de status (carregando, erro, sucesso) anunciadas por leitores de tela -->
+    <div id="status" class="status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
+
+    <!-- 2. Área principal: duas opções -->
+    <form id="formulario" class="cartao" novalidate>
+      <fieldset class="opcoes">
+        <legend class="opcoes__titulo">Como você quer fornecer o vídeo?</legend>
+
+        <!-- Opção A: arquivo local -->
+        <div class="opcao">
+          <input type="radio" name="fonte" id="fonte-arquivo" value="arquivo" checked />
+          <label for="fonte-arquivo">
+            <span class="opcao__nome">Selecionar vídeo</span>
+            <span class="opcao__desc">Arquivo do seu dispositivo (MP4, WebM, MOV, M4V, OGV).</span>
+          </label>
+          <div class="opcao__corpo" data-corpo="arquivo">
+            <div class="dropzone" id="dropzone">
+              <input
+                type="file"
+                id="arquivo"
+                name="arquivo"
+                accept="video/*,.mp4,.webm,.mov,.m4v,.ogv,.ogg"
+                aria-describedby="arquivo-ajuda"
+              />
+              <label class="dropzone__alvo" for="arquivo">
+                <span class="dropzone__icone" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 14 4.5-4.5 3.5 3.5 3-3L21 17" />
+                    <path d="M4 19h16" />
+                    <circle cx="8.5" cy="7.5" r="1.5" />
+                  </svg>
+                </span>
+                <span class="dropzone__texto">
+                  <strong>Escolher arquivo</strong> ou arraste e solte aqui
+                  <small>Formatos de vídeo comuns — nada é enviado para a internet.</small>
+                </span>
+              </label>
+            </div>
+            <p class="ajuda" id="arquivo-ajuda">
+              Dica: se o vídeo está no Instagram, primeiro salve-o no seu dispositivo usando as ferramentas da própria
+              plataforma ou o arquivo original que você gravou.
+            </p>
+          </div>
+        </div>
+
+        <!-- Opção B: URL direta -->
+        <div class="opcao">
+          <input type="radio" name="fonte" id="fonte-url" value="url" />
+          <label for="fonte-url">
+            <span class="opcao__nome">Usar URL direta</span>
+            <span class="opcao__desc">Endereço que aponta direto para o arquivo de vídeo (termina em .mp4, por exemplo).</span>
+          </label>
+          <div class="opcao__corpo" data-corpo="url">
+            <div class="campo">
+              <label class="campo__rotulo" for="url">URL direta do arquivo de vídeo</label>
+              <input
+                type="url"
+                id="url"
+                name="url"
+                inputmode="url"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="https://exemplo.com/meu-video.mp4"
+                aria-describedby="url-ajuda url-erro"
+              />
+              <p class="ajuda" id="url-ajuda">Somente <strong>HTTPS</strong> em sites que autorizam o acesso direto.</p>
+              <p class="erro-campo" id="url-erro" hidden></p>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 3. Botão principal -->
+      <div class="acoes">
+        <button type="submit" class="botao botao--primario" id="preparar">
+          <span class="botao__rotulo">Preparar download</span>
+        </button>
+        <button type="button" class="botao botao--fantasma" id="limpar" hidden>Limpar</button>
+      </div>
+    </form>
+
+    <!-- Aviso específico quando o usuário cola um link de publicação do Instagram -->
+    <section class="alerta alerta--instagram" id="alerta-instagram" hidden aria-labelledby="alerta-instagram-titulo">
+      <h2 id="alerta-instagram-titulo">Este link é de uma publicação do Instagram</h2>
+      <p>
+        Uma página estática aberta no navegador <strong>não consegue extrair o vídeo</strong> de um link de publicação:
+        o Instagram exige sessão autenticada e não libera o arquivo para outros sites. Esta ferramenta também não tenta
+        contornar login, permissões, CORS ou DRM — e nunca pede sua senha, cookies ou token.
+      </p>
+      <p class="alerta__acao">
+        <button type="button" class="botao botao--secundario" id="ir-para-arquivo">Selecionar um arquivo de vídeo local</button>
+      </p>
+    </section>
+
+    <!-- 4/5/6. Pré-visualização, informações e download -->
+    <section class="cartao resultado" id="resultado" tabindex="-1" hidden aria-labelledby="resultado-titulo">
+      <h2 id="resultado-titulo">Pré-visualização</h2>
+      <video id="video" controls playsinline preload="metadata"></video>
+
+      <dl class="informacoes" id="informacoes">
+        <div class="informacoes__item">
+          <dt>Nome</dt>
+          <dd id="info-nome">—</dd>
+        </div>
+        <div class="informacoes__item">
+          <dt>Tipo</dt>
+          <dd id="info-tipo">—</dd>
+        </div>
+        <div class="informacoes__item">
+          <dt>Tamanho</dt>
+          <dd id="info-tamanho">—</dd>
+        </div>
+        <div class="informacoes__item">
+          <dt>Origem</dt>
+          <dd id="info-origem">—</dd>
+        </div>
+      </dl>
+
+      <div class="acoes acoes--resultado">
+        <button type="button" class="botao botao--primario" id="baixar">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 4v10" />
+            <path d="m8 11 4 4 4-4" />
+            <path d="M5 19h14" />
+          </svg>
+          <span class="botao__rotulo">Baixar vídeo</span>
+        </button>
+        <a class="botao botao--secundario" id="abrir" href="#" target="_blank" rel="noopener noreferrer" hidden>
+          Abrir em nova aba
+        </a>
+      </div>
+      <p class="ajuda ajuda--resultado">
+        Se o navegador ou o servidor não permitir o download direto, use os controles do próprio player acima
+        (menu de três pontos ou clique com o botão direito) para salvar o vídeo.
+      </p>
+    </section>
+
+    <!-- 8. Nota de uso autorizado e limitação técnica -->
+    <section class="notas" aria-labelledby="notas-titulo">
+      <h2 id="notas-titulo">Uso autorizado</h2>
+      <p>
+        Baixe apenas conteúdo <strong>seu</strong> ou para o qual você tenha <strong>autorização explícita</strong> do
+        autor. Respeite direitos autorais, termos de uso das plataformas e a legislação aplicável. Você é responsável
+        pelo uso que fizer desta ferramenta.
+      </p>
+      <h3>Sobre links de publicações do Instagram</h3>
+      <p>
+        Links de publicações (por exemplo <code>instagram.com/p/...</code> ou <code>/reel/...</code>) apontam para uma
+        página, não para um arquivo de vídeo. Sem um servidor próprio e sem violar os termos da plataforma, não é
+        possível obter o vídeo a partir desse tipo de link — por isso esta página trabalha com arquivos locais e URLs
+        diretas de vídeo.
+      </p>
+      <h3>Como funciona por aqui</h3>
+      <ul>
+        <li>Arquivos locais viram uma URL temporária criada no seu navegador e revogada ao trocar de arquivo ou sair da página.</li>
+        <li>Nenhuma senha, cookie ou token do Instagram é solicitado ou armazenado.</li>
+        <li>Nenhuma requisição é feita para extrair dados de páginas de redes sociais.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>VaultReel — projeto de demonstração, sem afiliação com o Instagram ou a Meta.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
