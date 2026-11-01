@@ -117,7 +117,6 @@ function limparListenersRemotos() {
     estado.timerTravado = null;
   }
   el.video.removeEventListener("loadeddata", aoCarregarPrevia);
-  el.video.removeEventListener("loadedmetadata", aoCarregarPrevia);
   el.video.removeEventListener("error", aoFalharPrevia);
   el.video.removeEventListener("stalled", aoTravarPrevia);
 }
@@ -390,7 +389,6 @@ function prepararUrlRemota(validacao) {
 
   // Listeners de sucesso/falha da prévia (removidos assim que um deles dispara).
   el.video.addEventListener("loadeddata", aoCarregarPrevia, { once: true });
-  el.video.addEventListener("loadedmetadata", aoCarregarPrevia, { once: true });
   el.video.addEventListener("error", aoFalharPrevia, { once: true });
   el.video.addEventListener("stalled", aoTravarPrevia, { once: true });
 
@@ -597,7 +595,7 @@ function selecionarFonte(fonte, { focar = false } = {}) {
     radio.checked = true;
     if (focar) radio.focus();
   }
-  // Reforço visual (o CSS já trata com :has, mas garantimos o fallback).
+  // O corpo de cada opção é mostrado/oculto aqui, então funciona em qualquer navegador.
   el.corpoArquivo.hidden = fonte !== "arquivo";
   el.corpoUrl.hidden = fonte !== "url";
 }
