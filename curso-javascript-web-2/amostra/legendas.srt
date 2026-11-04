@@ -1,0 +1,48 @@
+1
+00:00:00,000 --> 00:00:03,957
+Vamos criar uma pequena página e guardar dados com JavaScript.
+
+2
+00:00:03,957 --> 00:00:06,391
+Primeiro, observe a árvore de arquivos.
+
+3
+00:00:06,391 --> 00:00:11,536
+A pasta minha-aula terá dois arquivos: index ponto html e app ponto js.
+
+4
+00:00:11,536 --> 00:00:19,114
+Vou criar o HTML para dar estrutura à página, adicionar um título e um espaço onde o resultado aparece.
+
+5
+00:00:19,114 --> 00:00:27,939
+Agora, conecto o script app ponto js com o atributo defer, para o navegador executar o código depois de ler a página.
+
+6
+00:00:27,939 --> 00:00:32,351
+No editor, crio a constante nome e guardo o texto Ana.
+
+7
+00:00:32,351 --> 00:00:35,576
+Como esse valor não precisa mudar, uso const.
+
+8
+00:00:35,576 --> 00:00:41,235
+Em seguida, crio a variável visitas com let, porque o contador vai ser atualizado.
+
+9
+00:00:41,235 --> 00:00:46,380
+Somo um à variável e escrevo o resultado dentro do elemento da página.
+
+10
+00:00:46,380 --> 00:00:53,166
+Repare: o texto falado aparece igual na legenda, e o código surge com uma animação de digitação.
+
+11
+00:00:53,166 --> 00:00:59,280
+Por fim, confira a árvore de arquivos, execute a página e veja Ana, uma visita.
+
+12
+00:00:59,280 --> 00:01:04,880
+Esse é o ciclo: criar o arquivo, escrever uma instrução e observar o resultado.
+
