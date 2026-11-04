@@ -15,7 +15,9 @@ Dez videoaulas em português, cada uma com **30 segundos**, formato **16:9 (1280
 9. `async`, `await` e `fetch`
 10. Módulos e mini projeto final
 
-Os MP4 individuais estão em [`videos/`](videos/). Para baixar o conjunto, use [`videos/10-aulas-javascript-mp4.zip`](videos/10-aulas-javascript-mp4.zip).
+Os MP4 individuais sem narração estão em [`videos/`](videos/). Para baixar esse conjunto, use [`videos/10-aulas-javascript-mp4.zip`](videos/10-aulas-javascript-mp4.zip).
+
+A versão com locução em português brasileiro está na pasta [`aulas-com-narracao/`](aulas-com-narracao/), com os vídeos narrados, os MP3 de voz e o ZIP do conjunto.
 
 ## Regenerar os vídeos
 
