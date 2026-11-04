@@ -17,7 +17,9 @@ Dez videoaulas em português, cada uma com **30 segundos**, formato **16:9 (1280
 
 Os MP4 individuais sem narração estão em [`videos/`](videos/). Para baixar esse conjunto, use [`videos/10-aulas-javascript-mp4.zip`](videos/10-aulas-javascript-mp4.zip).
 
-A versão com locução em português brasileiro está na pasta [`aulas-com-narracao/`](aulas-com-narracao/), com os vídeos narrados, os MP3 de voz e o ZIP do conjunto.
+A versão curta com locução em português brasileiro está na pasta [`aulas-com-narracao/`](aulas-com-narracao/), com os vídeos narrados, os MP3 de voz e o ZIP do conjunto.
+
+O curso completo para iniciantes está sendo produzido em [`curso-javascript-web/`](curso-javascript-web/), com aulas de 5–8 minutos, narração e exercícios.
 
 ## Regenerar os vídeos
 
