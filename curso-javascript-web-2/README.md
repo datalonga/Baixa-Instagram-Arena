@@ -4,12 +4,14 @@ Esta pasta contém o **prompt mestre** e uma aula de demonstração para aprova�
 
 ## Aula de exemplo
 
-- [Assistir ao MP4 da aula de demonstração](amostra/aula-exemplo.mp4)
-- [Baixar o pacote da amostra](amostra/pacote-amostra.zip)
+- [Assistir à nova versão em motion graphics](amostra/aula-exemplo-motion.mp4)
+- [Baixar o pacote da amostra em motion graphics](amostra/pacote-motion-graphics.zip)
+- [Comparar com a versão anterior, baseada em interface](amostra/aula-exemplo.mp4)
+- [Pacote da versão anterior](amostra/pacote-amostra.zip)
 - [Ler o roteiro falado/legendado](amostra/roteiro.md)
 - [Ver as legendas SRT](amostra/legendas.srt)
 
-A demonstração apresenta a criação simulada dos arquivos `index.html` e `app.js`, digitação animada do código, prévia ao vivo no navegador e narração em português brasileiro. Cada frase falada aparece como legenda com o mesmo texto. O áudio usa a voz masculina selecionada anteriormente.
+A nova versão troca o layout persistente de editor por motion graphics: tipografia cinética, arquivos que se montam em uma árvore, código que é digitado e se transforma em cartões de valores, conexões animadas e resultado revelado no navegador. Mantém a narração em português brasileiro e as frases faladas como legendas com o mesmo texto. O áudio usa a voz masculina selecionada anteriormente.
 
 ## Prompt mestre
 
