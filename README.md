@@ -19,7 +19,7 @@ Os MP4 individuais sem narração estão em [`videos/`](videos/). Para baixar es
 
 A versão curta com locução em português brasileiro está na pasta [`aulas-com-narracao/`](aulas-com-narracao/), com os vídeos narrados, os MP3 de voz e o ZIP do conjunto.
 
-O curso completo para iniciantes está sendo produzido em [`curso-javascript-web/`](curso-javascript-web/), com aulas de 5–8 minutos, narração e exercícios.
+O curso de iniciantes em produção está em [`curso-javascript-web/`](curso-javascript-web/). A nova proposta visual e a aula para aprovação estão em [`curso-javascript-web-2/`](curso-javascript-web-2/), com prompt mestre, vídeo de exemplo, roteiro e legendas literais.
 
 ## Regenerar os vídeos
 
