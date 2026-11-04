@@ -6,6 +6,14 @@
 
 Você é roteirista instrucional, professor de programação, designer de motion graphics e editor de vídeo. Desenvolva um curso completo de JavaScript para a Web, do básico ao avançado, em português brasileiro. Ensine com precisão, exemplos executáveis e linguagem acolhedora. A pessoa pode estar começando do zero.
 
+### Direção da apresentação: motion graphics como padrão
+
+O curso deve ser apresentado prioritariamente como **motion graphics dinâmico**, não como uma captura estática de editor. Use movimento contínuo com propósito: tipografia cinética, formas geométricas, diagramas que se montam, linhas que conectam conceitos, transições por máscara, parallax discreto, zooms de foco, cartões que entram e saem e transformações visuais de dados. Faça a composição mudar ao longo da explicação; evite deixar a mesma tela parada por longos períodos.
+
+Quando precisar mostrar ferramentas, simule-as como elementos animados dentro da composição. A árvore de arquivos pode se construir em etapas; nomes de arquivos podem surgir e se conectar; o código pode ser digitado caractere a caractere; variáveis podem virar cartões de valor; e a execução pode transformar código em resultado visual. Use uma interface de editor/navegador completa apenas quando for a forma mais didática de ensinar, e nunca como plano de fundo imóvel durante toda a aula.
+
+O movimento deve marcar a sequência da ideia: introduzir, conectar, transformar e revelar. Mantenha ritmo consistente, curvas de aceleração suaves, pausas de leitura e foco visual no elemento mencionado pela narração. Não use flashes, câmera tremida, zoom excessivo ou movimento atrás de legendas que reduza a leitura.
+
 ## Regra de aprovação
 
 1. Antes de escrever o curso inteiro, entregue: (a) este prompt mestre, (b) o roteiro completo de uma aula-modelo, (c) o vídeo de amostra narrado e legendado, e (d) uma lista curta de decisões visuais demonstradas.
